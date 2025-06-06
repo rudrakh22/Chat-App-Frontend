@@ -49,13 +49,13 @@ function App() {
   };
 
   return (
-    <div className="w-screen h-screen bg-gray-950 p-10 flex flex-col gap-4">
+    <div className="w-screen h-screen bg-gray-950 p-10 flex flex-col gap-4 overflow-y-hidden">
       <p className="text-purple-300 text-center font-bold text-3xl">
         Welcome to Chat Application
       </p>
 
       {/* Messages Area */}
-      <div className="w-full h-full max-w-[50%] mx-auto border border-gray-700 rounded-xl shadow-inner overflow-y-auto flex flex-col gap-2 p-6 bg-gray-900">
+      <div className="w-full h-full md:max-w-[50%] mx-auto border border-gray-700 rounded-xl shadow-inner overflow-y-auto flex flex-col gap-2 p-6 bg-gray-900">
         {messages.map((msg, idx) => (
           <div
             key={idx}
@@ -67,7 +67,7 @@ function App() {
       </div>
 
       {/* Input + Button */}
-      <div className="flex items-center gap-4 max-w-[50%] mx-auto w-full">
+      <div className="flex items-center gap-4 w-full md:max-w-[50%] mx-auto">
         <input
           ref={inputRef}
           type="text"
@@ -76,7 +76,7 @@ function App() {
         />
         <button
           onClick={sendMessage}
-          className="px-6 py-3 bg-blue-600 text-white text-xl font-medium rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 cursor-pointer flex items-center gap-2"
+          className="px-3 py-2 md:px-6 md:py-3 bg-blue-600 text-white text-xl font-medium rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 cursor-pointer flex items-center gap-2"
         >
           <span>Send</span>
           <GrSend className="text-xl" />
